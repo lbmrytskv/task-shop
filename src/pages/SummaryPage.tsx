@@ -13,14 +13,13 @@ const SummaryPage = () => {
   );
 
   const handlePlaceOrder = () => {
-    // Save order details
-    localStorage.setItem('order', JSON.stringify(state.items));
-    localStorage.setItem('orderTotal', total.toFixed(2));
+  // Save order details
+  localStorage.setItem('order', JSON.stringify(state.items));
+  localStorage.setItem('orderTotal', total.toFixed(2));
 
-    // Redirect to static confirmation page
-    const base = import.meta.env.MODE === 'production' ? '/task-shop/' : '/';
-    window.location.href = `${base}confirmation.html`;
-  };
+  // Redirect to static confirmation page
+  window.location.href = `${import.meta.env.BASE_URL}confirmation.html`;
+};
 
   return (
     <div style={{ padding: '2rem' }}>
