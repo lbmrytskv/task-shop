@@ -30,9 +30,10 @@ The application allows users to:
 
 ## ▶️ How to Run Locally
 
-
+```bash
 npm install     # install dependencies
 npm run dev     # start local dev server
+```
 
 Then open: http://localhost:5173
 
@@ -45,8 +46,7 @@ Then open: http://localhost:5173
 This project can be extended with type-aware lint rules for production setups:
 
 js
-Копіювати
-Редагувати
+```bash
 export default tseslint.config({
   extends: [
     ...tseslint.configs.recommendedTypeChecked,
@@ -61,10 +61,9 @@ export default tseslint.config({
   },
 })
 React-specific rules can also be added:
-
+```
 js
-Копіювати
-Редагувати
+```bash
 import reactX from 'eslint-plugin-react-x'
 import reactDom from 'eslint-plugin-react-dom'
 
@@ -78,3 +77,4 @@ export default tseslint.config({
     ...reactDom.configs.recommended.rules,
   },
 })
+```
