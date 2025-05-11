@@ -8,6 +8,7 @@ const CartPage = () => {
   const { state, dispatch } = useCart();
   const navigate = useNavigate();
 
+  // Calculate total price from all items in the cart
   const total = state.items.reduce(
   (sum, item) =>
     sum + item.quantity * (item.price.main + item.price.fractional / 100),

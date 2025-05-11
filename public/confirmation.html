@@ -8,6 +8,7 @@
   <h1>Zamówienie złożone pomyślnie!</h1>
   <div id="order-summary"></div>
   <br />
+  <!-- Link back to product list; clears localStorage on click -->
   <a href="/" onclick="localStorage.removeItem('order'); localStorage.removeItem('orderTotal');">
     ← Wróć do listy
   </a>
@@ -17,6 +18,8 @@
     const total = localStorage.getItem('orderTotal');
 
     const container = document.getElementById('order-summary');
+
+    // If no order data is found, show fallback message
 
     if (order.length === 0) {
       container.innerHTML = "<p>Brak danych o zamówieniu.</p>";

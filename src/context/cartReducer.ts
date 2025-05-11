@@ -1,5 +1,7 @@
 import type { CartState, CartAction } from '../types/Cart';
 
+// Handles all cart-related actions: add, remove, increment, decrement, and clear — updates state accordingly
+
 export const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
     case 'ADD_ITEM': {

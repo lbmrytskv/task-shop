@@ -1,6 +1,9 @@
+
 import React, { createContext, useReducer, useContext } from 'react';
-import type { CartItem, CartState, CartAction } from '../types/Cart';
+import type { CartState, CartAction } from '../types/Cart';
 import { cartReducer } from './cartReducer';
+
+// Provides global cart state and dispatch function across the app using React Context and Reducer
 
 const initialState: CartState = {
   items: [],

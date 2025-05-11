@@ -13,7 +13,7 @@ const SummaryPage = () => {
   );
 
   const handlePlaceOrder = () => {
-    
+    // Save order details
     localStorage.setItem('order', JSON.stringify(state.items));
     localStorage.setItem('orderTotal', total.toFixed(2));
 

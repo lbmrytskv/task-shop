@@ -2,13 +2,13 @@
 import products from '../data/products.json';
 import type { Product } from '../types/Product';
 import { useCart } from '../context/CartContext';
-import { Link } from 'react-router-dom';
+
 
 const ProductListPage = () => {
   const { dispatch } = useCart();
 
   const handleAddToCart = (product: Product) => {
-    dispatch({ type: 'ADD_ITEM', payload: product });
+    dispatch({ type: 'ADD_ITEM', payload: product }); // action to add item to cart
   };
 
   return (
