@@ -41,7 +41,7 @@ const SummaryPage = () => {
       <br />
       <button onClick={handlePlaceOrder}>Złóż Zamówienie</button>
       <br /><br />
-      <Link to="/cart">← Wróć do listy</Link>
+      <Link to="/cart">← Wróć do koszyka</Link>
     </div>
   );
 };
