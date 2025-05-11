@@ -30,7 +30,7 @@ The application allows users to:
 
 ## ▶️ How to Run Locally
 
-```bash
+
 npm install     # install dependencies
 npm run dev     # start local dev server
 
