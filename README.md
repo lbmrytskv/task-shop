@@ -36,6 +36,10 @@ npm run dev     # start local dev server
 
 Then open: http://localhost:5173
 
+🚀 Live Production Demo
+
+👉 https://lbmrytskv.github.io/task-shop/
+
 
 🔍 Extra ESLint Configuration 
 This project can be extended with type-aware lint rules for production setups:
