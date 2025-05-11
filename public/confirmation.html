@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Order Confirmation</title>
+</head>
+<body style="font-family: sans-serif; padding: 2rem; background: #f9f9f9;">
+  <h1>Zamówienie złożone pomyślnie!</h1>
+  <div id="order-summary"></div>
+  <br />
+  <a href="/" onclick="localStorage.removeItem('order'); localStorage.removeItem('orderTotal');">
+    ← Return to Product List
+  </a>
+
+  <script>
+    const order = JSON.parse(localStorage.getItem('order') || '[]');
+    const total = localStorage.getItem('orderTotal');
+
+    const container = document.getElementById('order-summary');
+
+    if (order.length === 0) {
+      container.innerHTML = "<p>Brak danych o zamówieniu.</p>";
+    } else {
+      const list = document.createElement('ul');
+      list.style.listStyle = 'none';
+      order.forEach(item => {
+        const li = document.createElement('li');
+        li.style.marginBottom = '1rem';
+        li.innerHTML = `
+          <div><strong>${item.name}</strong></div>
+          <div>Quantity: ${item.quantity}</div>
+          <div>Subtotal: ${(item.quantity * (item.price.main + item.price.fractional / 100)).toFixed(2)} zł</div>
+        `;
+        list.appendChild(li);
+      });
+
+      const totalDiv = document.createElement('div');
+      totalDiv.innerHTML = `<strong>Total:</strong> ${total} zł`;
+
+      container.appendChild(list);
+      container.appendChild(document.createElement('hr'));
+      container.appendChild(totalDiv);
+    }
+  </script>
+</body>
+</html>

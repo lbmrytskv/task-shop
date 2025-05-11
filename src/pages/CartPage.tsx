@@ -1,8 +1,12 @@
 
 import { useCart } from '../context/CartContext';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 const CartPage = () => {
   const { state, dispatch } = useCart();
+  const navigate = useNavigate();
 
   const total = state.items.reduce(
   (sum, item) =>
@@ -13,6 +17,8 @@ const CartPage = () => {
 
   return (
     <div style={{ padding: '2rem' }}>
+        
+
       <h1>Your Cart</h1>
       {state.items.length === 0 ? (
         <p>Cart is empty</p>
@@ -40,8 +46,10 @@ const CartPage = () => {
       <hr />
       <div><strong>Total:</strong> {total.toFixed(2)} zł</div>
       <br />
-<button onClick={() => window.location.href = '/summary'}>Proceed to Summary</button>
+<button onClick={() => navigate('/summary')}>Proceed to Summary</button>
 <br /><br />
+<Link to="/">← Back to Product List</Link>
+
     </div>
   );
 };

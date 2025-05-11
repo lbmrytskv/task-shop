@@ -1,10 +1,10 @@
 
 import { useCart } from '../context/CartContext';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const SummaryPage = () => {
-  const { state, dispatch } = useCart();
-  const navigate = useNavigate();
+  const {state} = useCart();
+  
 
   const total = state.items.reduce(
     (sum, item) =>
