@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProductListPage from './pages/ProductListPage';
 import { CartProvider } from './context/CartContext';
@@ -10,9 +9,11 @@ function App() {
   return (
     <CartProvider>
       <BrowserRouter>
-       <Navbar />
+        <Navbar />
         <Routes>
+          
           <Route path="/" element={<ProductListPage />} />
+          <Route path="/task-shop/" element={<ProductListPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/summary" element={<SummaryPage />} />
         </Routes>
