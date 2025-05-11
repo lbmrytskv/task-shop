@@ -23,25 +23,25 @@ const SummaryPage = () => {
 
   return (
     <div style={{ padding: '2rem' }}>
-      <h1>Order Summary</h1>
+      <h1>Podsumowanie zamówienia</h1>
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {state.items.map(item => (
           <li key={item.id} style={{ marginBottom: '1rem' }}>
             <div><strong>{item.name}</strong></div>
-            <div>Quantity: {item.quantity}</div>
-            <div>Price: {item.price.main},{item.price.fractional.toString().padStart(2, '0')} zł</div>
+            <div>Iłość: {item.quantity}</div>
+            <div>Cena: {item.price.main},{item.price.fractional.toString().padStart(2, '0')} zł</div>
             <div>
-              Subtotal: {(item.quantity * (item.price.main + item.price.fractional / 100)).toFixed(2)} zł
+              Suma częściowa: {(item.quantity * (item.price.main + item.price.fractional / 100)).toFixed(2)} zł
             </div>
           </li>
         ))}
       </ul>
       <hr />
-      <div><strong>Total:</strong> {total.toFixed(2)} zł</div>
+      <div><strong>Łącznie:</strong> {total.toFixed(2)} zł</div>
       <br />
-      <button onClick={handlePlaceOrder}>Place Order</button>
+      <button onClick={handlePlaceOrder}>Złóż Zamówienie</button>
       <br /><br />
-      <Link to="/cart">← Back to Cart</Link>
+      <Link to="/cart">← Wróć do listy</Link>
     </div>
   );
 };
