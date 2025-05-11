@@ -1,8 +1,9 @@
-// src/App.tsx
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProductListPage from './pages/ProductListPage';
 import { CartProvider } from './context/CartContext';
 import CartPage from './pages/CartPage';
+import SummaryPage from './pages/SummaryPage';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ProductListPage />} />
           <Route path="/cart" element={<CartPage />} />
-          {/* CartPage, SummaryPage — додамо пізніше */}
+          <Route path="/summary" element={<SummaryPage />} />
         </Routes>
       </BrowserRouter>
     </CartProvider>

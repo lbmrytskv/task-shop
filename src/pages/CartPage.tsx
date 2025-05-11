@@ -39,6 +39,9 @@ const CartPage = () => {
       )}
       <hr />
       <div><strong>Total:</strong> {total.toFixed(2)} zł</div>
+      <br />
+<button onClick={() => window.location.href = '/summary'}>Proceed to Summary</button>
+<br /><br />
     </div>
   );
 };
