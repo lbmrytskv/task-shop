@@ -1,10 +1,10 @@
+/// <reference types="vite/client" />
 
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
 const SummaryPage = () => {
-  const {state} = useCart();
-  
+  const { state } = useCart();
 
   const total = state.items.reduce(
     (sum, item) =>
@@ -18,8 +18,8 @@ const SummaryPage = () => {
     localStorage.setItem('orderTotal', total.toFixed(2));
 
     // Redirect to static confirmation page
-   window.location.href = `${import.meta.env.BASE_URL}confirmation.html`;
-
+    const base = import.meta.env.MODE === 'production' ? '/task-shop/' : '/';
+    window.location.href = `${base}confirmation.html`;
   };
 
   return (
