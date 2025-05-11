@@ -1,7 +1,9 @@
+/// <reference types="node" />
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/task-shop/', 
+  base: process.env.NODE_ENV === 'production' ? '/task-shop/' : '/',
   plugins: [react()],
 })

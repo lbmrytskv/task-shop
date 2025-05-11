@@ -18,7 +18,8 @@ const SummaryPage = () => {
     localStorage.setItem('orderTotal', total.toFixed(2));
 
     // Redirect to static confirmation page
-    window.location.href = '/confirmation.html';
+   window.location.href = `${import.meta.env.BASE_URL}confirmation.html`;
+
   };
 
   return (
